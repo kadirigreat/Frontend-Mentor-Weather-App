@@ -1,0 +1,486 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(243, 96%, 9%);
+  font-family: "DM Sans", sans-serif;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.dropbtn {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+  padding: 5px 7px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: hsl(243, 27%, 20%);
+  color: white;
+  font-size: 15px;
+}
+
+.dropbtn img {
+  width: 13px;
+  margin-inline: 2px;
+}
+
+.dropdown-content {
+  width: 100%;
+  max-width: 160px;
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 1px;
+  z-index: 100;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: hsl(243, 27%, 20%);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content > h3 {
+  width: 100%;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 3px;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid hsl(240, 6%, 70%);
+  padding-block: 5px;
+}
+
+.line > p {
+  color: hsl(240, 6%, 70%);
+  font-size: 10px;
+  opacity: 0.8;
+  padding: 3px;
+}
+
+.line > button {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(243, 27%, 20%);
+  color: white;
+  padding: 3px;
+  margin-bottom: 3px;
+  font-size: 12px;
+  text-align: left;
+  opacity: 0.8;
+}
+
+.line:nth-child(4) {
+  border-bottom: none;
+}
+
+.main-content {
+  margin-top: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-content h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 450px;
+  background-color: hsl(243, 27%, 20%);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: none;
+  border: none;
+  height: 45px;
+  font-size: 16px;
+}
+
+.search-button {
+  background-color: hsl(233, 67%, 56%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  height: 45px;
+  font-size: 16px;
+}
+
+.weather-overview {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  align-items: stretch;
+  align-self: stretch;
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px;
+  max-height: 700px;
+}
+
+.weather-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("/assets/images/bg-today-large.svg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 286px;
+  padding-inline: 20px;
+}
+
+.temperature-info {
+  display: flex;
+  align-items: center;
+}
+
+.temperature-info > img {
+  width: 100px;
+  height: 100px;
+}
+
+.temperature-info > h3 {
+  font-size: 100px;
+  font-weight: 400;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.weather-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  background-color: hsl(243, 27%, 20%);
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.weather-details > div > p {
+  font-size: 14px;
+  font-weight: 200;
+  color: hsl(240, 6%, 70%);
+}
+
+.weather-details > div > h4 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.daily-forecast1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.daily-forecast1 > h2 {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.daily-forecast {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  background-color: hsl(243, 27%, 20%);
+  border-radius: 20px;
+  padding: 15px 5px;
+}
+
+.forecast > img {
+  padding-block: 10px;
+}
+
+.forecast-day > img {
+  width: 50px;
+  height: 50px;
+}
+
+.temperatures {
+  display: flex;
+  gap: 25px;
+}
+
+.hourly-forecast1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: hsl(243, 23%, 24%);
+  color: white;
+  font-size: 12px;
+  height: 100%;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.hourly-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.dropdown-days-btn {
+  position: relative;
+}
+
+.selected-day {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px 7px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: hsl(243, 27%, 20%);
+  color: white;
+  font-size: 13px;
+}
+
+.dropdown-days {
+  display: none;
+  position: absolute;
+  background-color: hsl(243, 27%, 20%);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  z-index: 1;
+  border-radius: 10px;
+  right: 1px;
+  top: 30px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.dropdown-days > p {
+  padding: 10px;
+}
+
+.dropdown-days-btn:hover .dropdown-days {
+  display: block;
+}
+
+.hour1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.hour {
+  background-color: hsl(243, 23%, 30%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-radius: 10px;
+  gap: 5px;
+  padding: 10px 10px;
+}
+
+.hour > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hour > div > img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.hour > div > p {
+  margin: 0;
+  font-size: 13px;
+  color: #e0e0e0;
+}
+
+.hour > div > h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: hsl(240, 6%, 70%);
+}
+
+/* Tablet (≤ 900px) */
+@media (max-width: 900px) {
+  .weather-overview {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    max-height: none;
+  }
+  .weather-summary,
+  .hourly-forecast1 {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  .current-weather {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .daily-forecast {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .container {
+    padding: 8px;
+  }
+  .heading {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main-content h1 {
+    font-size: 32px;
+  }
+  .search-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .search-input,
+  .search-button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    height: 40px;
+  }
+  .weather-summary,
+  .hourly-forecast1 {
+    padding: 8px;
+    border-radius: 10px;
+    gap: 10px;
+  }
+  .current-weather {
+    flex-direction: column;
+    height: auto;
+    padding: 8px;
+    gap: 8px;
+  }
+  .temperature-info > img {
+    width: 60px;
+    height: 60px;
+  }
+  .temperature-info > h3 {
+    font-size: 60px;
+  }
+  .weather-details {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .daily-forecast {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .forecast-day {
+    padding: 8px 2px;
+    border-radius: 10px;
+    gap: 6px;
+  }
+  .hour1 {
+    flex-direction: column;
+    gap: 6px;
+    padding: 4px 2px;
+  }
+  .hour {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+  }
+  .dropdown-content,
+  .dropdown-days {
+    min-width: 140px;
+    font-size: 12px;
+    right: 0;
+    left: 0;
+  }
+  footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
